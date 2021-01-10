@@ -11,9 +11,9 @@
 
     //Dark Theme
     --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
-    --Very-Dark-Blue-TOP-BG: hsl(232, 19%, 15%);
-    --Dark-Desaturated-Blue-CARD-BG: hsl(228, 28%, 20%);
-    --Desaturated-Blue-TEXT: hsl(228, 34%, 66%);
+    --Very-Dark-Blue-TOP-BG:hsl(224, 25%, 26%);
+    --Dark-Desaturated-Blue-CARD-BG:hsl(226, 30%, 20%);
+    --Desaturated-Blue-TEXT:hsl(228, 34%, 66%);
     --White-Text: hsl(0, 0%, 100%);
     //--Toggle-Dark-Theme: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
 
@@ -38,9 +38,11 @@ body{
 }
 
 
-/*HEADER*/
+
+// HEADER -------------------------------------
+
 .header{
-    background: #f8f9fe;//var(--Light-Grayish-Blue-CARD-BG);
+    background: #f8f9fe;
     padding-bottom: 100px;
     border-radius: 0 0 20px 20px;
 }
@@ -64,7 +66,10 @@ h1{
     margin-bottom: 40px;
 }
 
-/**/
+
+
+//TOTAL -------------------------------------
+
 .wrapper{
     padding: 0 15px;
 }
@@ -82,6 +87,10 @@ h1{
     text-align: center;
     position:relative;
     
+}
+
+.card:hover{
+    background-color: rgb(217, 221, 238);
 }
 
 .card:before{
@@ -140,6 +149,7 @@ h1{
     font-weight: 700;
     color: var(--Very-Dark-Blue-TEXT);
 }
+
 .card-followers-title{
     display: block;
     text-transform: uppercase;
@@ -179,14 +189,13 @@ h1{
 
 
 
-//OVERVIEW
+//OVERVIEW -------------------------------------
 
 h2{
     color: var(--Dark-Grayish-Blue-TEXT)
 }
 
 .overview{
-    //border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 50px;
 }
@@ -204,6 +213,9 @@ h2{
     border-radius: 8px;
 }
 
+.small-card:hover{
+    background-color: rgb(217, 221, 238);
+}
 
 .small-card p{
     margin: 0;
@@ -263,4 +275,116 @@ h2{
 
 .small-card-percent-down img{
     margin-right: 2px;
+}
+
+@media screen and (min-width: 480px){
+
+    h1{
+        margin:0;
+        padding-top:28px;
+        font-size: 2.2em;
+    }
+
+    .header-total{
+        border-bottom: none;
+        padding-bottom:0;
+    }
+
+    .grid{
+        grid-template-columns:  1fr 1fr;
+        grid-column-gap: 25px;
+        grid-row-gap: 20px;
+    }
+
+    .wrapper{
+        margin:auto;
+    }
+
+
+}
+
+@media screen and (min-width: 960px){
+    .header{
+        background: #f8f9fe;
+        padding-bottom: 165px;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .cards{
+        margin-top: -115px;
+    }
+
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .wrapper{
+        max-width: 1220px;
+    }
+
+    .card-followers-number{
+        font-size: 60px;
+    }
+}
+
+
+@media (prefers-color-scheme: dark){
+    body{
+        color: var(--White-Text);
+        //background-color: var(--Very-Dark-Blue-BG);
+        background: #1e232c;//var(--Very-Dark-Blue-BG);
+    }
+
+    //HEADER
+    .header{
+        //background: #1e232c;//var(--Very-Dark-Blue-BG);
+        background-color: var(--Very-Dark-Blue-BG);
+    }
+    
+    .header-total{
+        color: var(--Dark-Grayish-Blue-TEXT);
+        border-bottom: 2px solid var(--Dark-Grayish-Blue-TEXT);
+    }
+    
+
+    //CARDS
+    .card{
+        background-color: var(--Dark-Desaturated-Blue-CARD-BG);
+    }
+    
+    .card:hover{
+        background-color: var(--Very-Dark-Blue-TOP-BG);
+    }
+    
+    .card-title{
+        color: var(--Desaturated-Blue-TEXT);
+    }
+    
+    .card-followers-number{
+        color: var(--White-Text);
+    }
+    
+    .card-followers-title{
+        color: var(--Desaturated-Blue-TEXT);
+    }
+
+    //SMALL CARDS
+    .small-card {
+        background: var(--Dark-Desaturated-Blue-CARD-BG);
+    }
+    
+    .small-card:hover{
+        background-color: var(--Very-Dark-Blue-TOP-BG);
+    }
+    
+    .small-card-stat{
+        color: var(--Desaturated-Blue-TEXT);
+    }
+
+}
+
+@media screen and (min-width: 480px) and (prefers-color-scheme:dark){
+    .header-total{
+    border-bottom: none;
+    }
 }
